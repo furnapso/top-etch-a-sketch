@@ -1,10 +1,45 @@
-body, html {height: 100%; width: 100%; padding: 0; border: 0; margin: 0;}
+body, html, #main {height: 100%; max-width: 100%; padding: 0; border: 0; margin: 0;}
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');
+
+:root {
+    --main-color: #56494E;
+}
+
+body {
+    background-color: var(--main-color);
+    color: white;
+    font-family: 'IBM Plex Sans', sans-serif;
+}
 
 .cell {
-    background-color: black;
+    background-color: white;
+    display: block;
+    height: 10px;
+    width: 10px;
 }
 
 #grid {
     display: grid;
-    
+    height: 50%;
+    width: 50%;
+}
+
+#main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#gridsize::placeholder {
+    text-align: center;
 }
