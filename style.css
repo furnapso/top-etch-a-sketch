@@ -7,6 +7,8 @@ body, html, #main {height: 100%; max-width: 100%; padding: 0; border: 0; margin:
     --secondary-color: #A29C9B;
 }
 
+/* color scheme: https://coolors.co/a62639-db324d-56494e-a29c9b-511c29 */
+
 body {
     background-color: var(--main-color);
     color: white;
