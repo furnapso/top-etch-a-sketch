@@ -2,8 +2,8 @@ function draw(gridsize) {
     // draw function
 
     const grid = document.querySelector("#grid");
-    let cellWidth = grid.offsetWidth / parseInt(gridsize);
-    let cellHeight = grid.offsetHeight / parseInt(gridsize);
+    let cellWidth = grid.offsetWidth / parseInt(gridsize) - 1;
+    let cellHeight = grid.offsetHeight / parseInt(gridsize) - 1;
     
     let gridCss = '';
 

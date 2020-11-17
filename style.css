@@ -4,6 +4,7 @@ body, html, #main {height: 100%; max-width: 100%; padding: 0; border: 0; margin:
 
 :root {
     --main-color: #56494E;
+    --secondary-color: #A29C9B;
 }
 
 body {
@@ -13,7 +14,7 @@ body {
 }
 
 .cell {
-    background-color: white;
+    background-color: var(--secondary-color);
     display: block;
     height: 10px;
     width: 10px;
