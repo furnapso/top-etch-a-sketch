@@ -1,13 +1,19 @@
 body, html, #main {height: 100%; max-width: 100%; padding: 0; border: 0; margin: 0;}
 
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');
-
 :root {
     --main-color: #56494E;
     --secondary-color: #A29C9B;
 }
 
 /* color scheme: https://coolors.co/a62639-db324d-56494e-a29c9b-511c29 */
+
+#header {
+    text-align: center;
+}
+
+h1 {
+    font-family: 'IBM Plex Sans';
+}
 
 body {
     background-color: var(--main-color);
@@ -31,7 +37,7 @@ body {
 #main {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
 }
 
