@@ -53,3 +53,7 @@ body {
 #gridsize::placeholder {
     text-align: center;
 }
+
+#message {
+    height: 20px;
+}

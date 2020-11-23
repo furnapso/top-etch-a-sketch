@@ -1,7 +1,11 @@
+const gridSizeBox = document.querySelector("#gridsize");
+const drawButton = document.querySelector("#draw");
+
 function draw(gridsize) {
     // draw function
 
     const grid = document.querySelector("#grid");
+    grid.innerHTML = "";
     let cellWidth = grid.offsetWidth / parseInt(gridsize) - 1;
     let cellHeight = grid.offsetHeight / parseInt(gridsize) - 1;
     
@@ -26,8 +30,22 @@ function draw(gridsize) {
     grid.style.gridTemplateColumns = gridCss;
 }
 
-function clear() {
-    // clear grid function
+function errorMessage(error) {
+    const messageBox = document.querySelector("#message");
+    messageBox.textContent = error;
 }
+
+drawButton.addEventListener("click", function() {
+    let gridSize = gridSizeBox.value;
+    if (gridSize == "") {
+        errorMessage("Please enter a grid size");
+        return;
+    }
+
+    else {
+        errorMessage("");
+        draw(gridSize);
+    }
+})
 
 draw(16);
