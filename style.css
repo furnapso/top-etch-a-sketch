@@ -30,8 +30,9 @@ body {
 
 #grid {
     display: grid;
-    height: 50%;
-    width: 50%;
+    justify-content: center;
+    min-height: 500px;
+    min-width: 500px;
 }
 
 #main {

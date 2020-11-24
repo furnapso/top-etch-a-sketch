@@ -8,6 +8,14 @@ function draw(gridsize) {
     grid.innerHTML = "";
     let cellWidth = grid.offsetWidth / parseInt(gridsize) - 1;
     let cellHeight = grid.offsetHeight / parseInt(gridsize) - 1;
+
+    if (cellHeight > cellWidth) {
+        cellHeight = cellWidth;
+    }
+
+    else {
+        cellWidth = cellHeight;
+    }
     
     let gridCss = '';
 
@@ -38,14 +46,28 @@ function errorMessage(error) {
 drawButton.addEventListener("click", function() {
     let gridSize = gridSizeBox.value;
     if (gridSize == "") {
-        errorMessage("Please enter a grid size");
+        errorMessage("Please enter a grid size up to 50");
         return;
+    }
+
+    else if (parseInt(gridSize) > 50) {
+        errorMessage("Please enter a grid size up to 50");
+        return
     }
 
     else {
         errorMessage("");
         draw(gridSize);
+        cellHoverColorChange();
     }
 })
+
+function cellHoverColorChange() {
+    document.querySelectorAll(".cell").forEach(i => {
+        i.addEventListener("mouseover", function() {
+            i.style.backgroundColor = "black";
+        });
+    });
+}
 
 draw(16);
