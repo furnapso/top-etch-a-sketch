@@ -46,12 +46,12 @@ function errorMessage(error) {
 drawButton.addEventListener("click", function() {
     let gridSize = gridSizeBox.value;
     if (gridSize == "") {
-        errorMessage("Please enter a grid size up to 50");
+        errorMessage("Please enter a grid size up to 100");
         return;
     }
 
-    else if (parseInt(gridSize) > 50) {
-        errorMessage("Please enter a grid size up to 50");
+    else if (parseInt(gridSize) > 100) {
+        errorMessage("Please enter a grid size up to 100");
         return
     }
 
@@ -65,9 +65,21 @@ drawButton.addEventListener("click", function() {
 function cellHoverColorChange() {
     document.querySelectorAll(".cell").forEach(i => {
         i.addEventListener("mouseover", function() {
-            i.style.backgroundColor = "black";
+            i.style.backgroundColor = getRandomRgb();
         });
     });
 }
 
+function randomBetween(num1, num2) {
+    return Math.floor(Math.random() * num2 + num1)
+}
+
+function getRandomRgb() {
+    let r = randomBetween(0, 255);
+    let g = randomBetween(0, 255);
+    let b = randomBetween(0, 255);
+    return `rgb(${r}, ${g}, ${b})`
+}
+
 draw(16);
+cellHoverColorChange();
